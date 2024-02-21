@@ -1,0 +1,18 @@
+#开发模式
+environment: development
+
+#启动的http端口
+port: "8080"
+#grpc 启动的端口
+grpc:
+  address: "0.0.0.0:8080"
+  login: "login.grpc.xxjio.com:800"
+  image: "image.grpc.xxjio.com:800"
+  account: "account.grpc.xxjio.com:800"
+  mail: "mail.grpc.xxjio.com:800"
+  item: "item.grpc.xxjio.com:800"
+  upfile: "upfile.grpc.xxjio.com:800"
+  token: "token.grpc.xxjio.com:800"
+  pvpgame: "pvpgame.grpc.xxjio.com:800"
+  booster: "booster.grpc.xxjio.com:800"
+  chatgpt: "chatgpt-grpc.grpc.xxjio.com:800"

@@ -19,3 +19,11 @@
 
 # Go workspace file
 go.work
+
+# vendor directory
+vendor/
+#config file
+config.yaml
+config.yml
+
+*.csv
