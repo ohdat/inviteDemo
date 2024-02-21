@@ -261,7 +261,7 @@ func toCSV() {
 		log.Fatalln(err)
 	}
 	currentDir := filepath.Dir(currentPath)
-	filename := fmt.Sprintf("%s/data-%s.csv", currentDir, time.Now().Format("2006-01-02-15-04-05"))
+	filename := fmt.Sprintf("%s/data-%s.csv", currentDir, time.Now().Format("2006-01-02-15-04"))
 	fmt.Println("filename:", filename)
 	file, err := os.Create(filename)
 	if err != nil {
