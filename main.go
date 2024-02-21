@@ -23,6 +23,7 @@ var (
 	maxLayer            = 200
 	inviteeNumArr       = []int{}
 	id                  = 0
+	inviteRandom        = false
 	inviteeNum          = []int{10, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	invitorsProbability = []float64{10, 10, 7, 1, 1, 1, 1, 1, 1, 1}
 	depositNum          = []int{10, 10, 10, 10, 10, 10, 10, 10, 10, 10}
@@ -43,6 +44,7 @@ var rootCmd = &cobra.Command{
 		numNodes = viper.GetInt("numNodes")
 		inviteeNum = viper.GetIntSlice("inviteeNum")
 		depositNum = viper.GetIntSlice("depositNum")
+		inviteRandom = viper.GetBool("inviteRandom")
 		viper.UnmarshalKey("invitorsProbability", &invitorsProbability)
 		viper.UnmarshalKey("depositProbability", &depositProbability)
 
@@ -211,6 +213,13 @@ func parentLayer(node *Node) *Node {
 func getInviteeNum() int {
 	if len(inviteeNumArr) == 0 {
 		return 0
+	}
+	if inviteRandom {
+		//随机从inviteeNumArr 中取出一个数
+		randomNum := rand.Intn(len(inviteeNumArr))
+		inviteeNum := inviteeNumArr[randomNum]
+		inviteeNumArr = append(inviteeNumArr[:randomNum], inviteeNumArr[randomNum+1:]...)
+		return inviteeNum
 	}
 
 	inviteeNum := inviteeNumArr[0]
