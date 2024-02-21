@@ -29,6 +29,6 @@ jobs:
           distribution: goreleaser
           version: latest
           args: release --clean
-        env:
-          GITHUB_TOKEN: ${{ github.token}}
+        # env:
+        #   GITHUB_TOKEN: ${{ github.token}}
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
