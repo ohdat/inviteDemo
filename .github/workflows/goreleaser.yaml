@@ -10,8 +10,6 @@ permissions:
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
-    # permissions:
-    #   contents: write
     steps:
       -
         name: Checkout
@@ -29,7 +27,7 @@ jobs:
           distribution: goreleaser
           version: latest
           args: release --clean
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
