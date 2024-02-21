@@ -246,7 +246,13 @@ func getID() (int, error) {
 }
 
 func toCSV() {
-	filename := fmt.Sprintf("./data-%s.csv", time.Now().Format("2006-01-02-15-04-05"))
+	currentPath, err := os.Executable()
+	if err != nil {
+		log.Fatalln(err)
+	}
+	currentDir := filepath.Dir(currentPath)
+	filename := fmt.Sprintf("%s/data-%s.csv", currentDir, time.Now().Format("2006-01-02-15-04-05"))
+	fmt.Println("filename:", filename)
 	file, err := os.Create(filename)
 	if err != nil {
 		fmt.Println("Cannot create file", err)
