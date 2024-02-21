@@ -1,18 +1,48 @@
-#开发模式
-environment: development
+initialRootNumNodes: 10
+numEachLayer: 5
+numLayers: 9
+numNodes: 10000
+inviteeNum:
+  - 10
+  - 2
+  - 3
+  - 5
+  - 8
+  - 10
+  - 7
+  - 1
+  - 2
+invitorsProbability:
+  - 10
+  - 10
+  - 7
+  - 1
+  - 1
+  - 1  
+  - 1
+  - 1
+  - 1
+  - 1
 
-#启动的http端口
-port: "8080"
-#grpc 启动的端口
-grpc:
-  address: "0.0.0.0:8080"
-  login: "login.grpc.xxjio.com:800"
-  image: "image.grpc.xxjio.com:800"
-  account: "account.grpc.xxjio.com:800"
-  mail: "mail.grpc.xxjio.com:800"
-  item: "item.grpc.xxjio.com:800"
-  upfile: "upfile.grpc.xxjio.com:800"
-  token: "token.grpc.xxjio.com:800"
-  pvpgame: "pvpgame.grpc.xxjio.com:800"
-  booster: "booster.grpc.xxjio.com:800"
-  chatgpt: "chatgpt-grpc.grpc.xxjio.com:800"
+depositNum:
+  - 100
+  - 200
+  - 300
+  - 400
+  - 500
+  - 600
+  - 700
+  - 800
+  - 900
+  - 1000
+depositProbability:
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10  
+  - 10
+  - 10
+  - 10
+  - 10
