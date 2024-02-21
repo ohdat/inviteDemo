@@ -1,1 +1,5 @@
 # inviteDemo
+
+```bash
+    ./inivite
+```
