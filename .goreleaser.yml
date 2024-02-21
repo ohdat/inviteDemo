@@ -11,5 +11,5 @@ builds:
   - binary: main
     id: gomain
     goos:
-     - mac
-    # - windows
+      - darwin
+      - windows
