@@ -6,6 +6,7 @@ import (
 	"log"
 	"math/rand"
 	"os"
+	"path/filepath"
 	"strconv"
 	"strings"
 	"time"
@@ -66,7 +67,13 @@ func InitConfig() {
 		viper.SetConfigFile(CfgFile)
 	} else {
 		// Search config in home directory with name .config" (without extension).
-		viper.AddConfigPath(".")
+		// 获取当前文件的路径
+		currentPath, err := os.Executable()
+		if err != nil {
+			log.Fatalln(err)
+		}
+		currentDir := filepath.Dir(currentPath)
+		viper.AddConfigPath(currentDir)
 		viper.SetConfigName("config")
 		viper.SetConfigType("yaml") //设置配置文件类型，可选
 	}
@@ -75,6 +82,8 @@ func InitConfig() {
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {
 		fmt.Println("Using config file:", viper.ConfigFileUsed())
+	} else {
+		fmt.Println("Using config file err:", err)
 	}
 }
 
