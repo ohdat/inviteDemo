@@ -42,6 +42,7 @@ var rootCmd = &cobra.Command{
 		numLayers = viper.GetInt("numLayers")
 		numNodes = viper.GetInt("numNodes")
 		inviteeNum = viper.GetIntSlice("inviteeNum")
+		depositNum = viper.GetIntSlice("depositNum")
 		viper.UnmarshalKey("invitorsProbability", &invitorsProbability)
 		viper.UnmarshalKey("depositProbability", &depositProbability)
 
