@@ -1,16 +1,30 @@
-initialRootNumNodes: 10
+initialRootNumNodes: 1000
 numEachLayer: 5
 randomInvite: true
 numLayers: 9
-numNodes: 10000
+numNodes: 1000000
+day: 10
+dayProbability: 
+  - 40
+  - 30
+  - 20
+  - 10
+rootInviteeNum:
+  - 10
+  - 20
+  - 30
+rootInvitorsProbability:
+  - 40
+  - 30
+  - 30
 inviteeNum:
   - 10
-  - 0
+  - 20
   - 2
   - 5
   - 3
   - 2
-  - 0
+  - 10
   - 5
   - 8
   - 0
@@ -21,10 +35,10 @@ inviteeNum:
 invitorsProbability:
   - 1.5
   - 30
-  - 0.3
-  - 0.2
-  - 0.5
-  - 0.5
+  - 3
+  - 2
+  - 5
+  - 5
   - 0.5
   - 0.5
   - 0.5
